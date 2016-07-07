@@ -1,0 +1,88 @@
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+html{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.9em;
+}
+
+body{
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+    flex-direction: column;
+    /*overflow: hidden;*/
+
+}
+
+
+#translate{
+
+		/*margin: 2% 8%;*/
+     box-sizing: border-box;
+		 display: flex;
+		 flex-direction: row;
+}
+
+#translate>*{
+		width: 50%;
+		padding: 1%;
+    /*white-space: pre-wrap;*/
+}
+
+
+#before,
+#after{
+
+		height: 350px;
+}
+
+#before:before{
+	content: "HTML5";
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#after:before{
+	content: "HTML6.io";
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+#head{
+
+	/*line-height: em;*/
+	line-height: 200%;
+
+		/*background: ghostwhite	;*/
+		/*border: 1px solid gray;*/
+		border-radius: 10px;
+		padding-bottom: 2%;
+		font-size: 1.3em;
+
+}
+
+
+
+.code-title{
+	font-weight: bold;
+	font-size: 105%;
+	position: relative;
+	padding-left: 54px;
+}
+.code-icon{
+	position: absolute;
+	top:0;
+	left: 0;
+	z-index: 99;
+	width: 48px;
+	height: 48px;
+}
+
+
+
+#email-signup{
+	margin: 0 auto;
+	width: 175px;
+}

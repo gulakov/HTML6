@@ -2,7 +2,7 @@
   "name": "html6.io",
   "description": "HTML6.io upgrades next-generation html pages and compiles to be compatible with all HTML5 browsers.",
   "version": "0.0.1",
-  "main": "h6-server.js",
+  "main": "server/h6-server.js",
   "scripts": {
     "start": "nohup forever --minUptime=10 --spinSleepTime=2000 -e ~/h6.log -o ~/h6.log -a -v -w .  >/dev/null 2>&1 &"
   },
