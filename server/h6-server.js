@@ -12,7 +12,7 @@ var app = function (req,res) {
 	var q = querystring.parse(url.query)
 
 
-	o(path)
+	// o(path)
 
 	res.writeHead(200);
 
@@ -32,21 +32,25 @@ var app = function (req,res) {
 
 		var libs = fs.readFileSync(__dirname + '/libs.txt', "utf8");
 
-		libs = (libs).split(" ");
+		libs = libs.split(" ");
+
+		// if(q.q)
+		// result_libs = libs.filter((item) => {
+		// 	return item.toLowerCase().indexOf(q.q.toLowerCase())>-1
+		// })
 
 
-		result_libs = libs.filter((item) => {
-			return item.toLowerCase().indexOf(q.q.toLowerCase())>-1
-		})
-
-
-		res.write(JSON.stringify(result_libs));
+		res.write(JSON.stringify(libs));
 		res.end();
 
 
 	} else {	//or else get file
 
-		fs.createReadStream("./"+url.pathname.substr(1)).pipe(res, {end: true});;
+		file_path = "./"+url.pathname.substr(1);
+
+		if (fs.existsSync(file_path))
+
+			fs.createReadStream(file_path).pipe(res, {end: true});;
 
 	}
 

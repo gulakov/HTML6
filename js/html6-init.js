@@ -11,18 +11,10 @@ ga('send', 'pageview');
 var editor = ace.edit("before");
 editor.setTheme("ace/theme/monokai");
 editor.getSession().setMode("ace/mode/html");
-
 var editor = ace.edit("after");
 editor.setTheme("ace/theme/monokai");
 // editor.getSession().setMode("ace/mode/javascript");
 
-
-
-// AUTOCOMPLETE
-
-AutoComplete({ Url: "libs/search",
-  EmptyMessage: "No libraries found" },
-  "#search-libs");
 
 
 
@@ -40,4 +32,46 @@ $("#email").change(function(){
 }).keydown(function(e){
   if(e.which==13)
     $(this).blur()
+})
+
+
+//PARTICLE ANIMATION
+
+document.body.insertAdjacentHTML('beforeend','<div id="particles"></div>')
+
+particleground(document.getElementById('particles'), {
+  dotColor: '#2981f1',
+  lineColor: '#2981f1'
+});
+
+
+
+
+
+// AUTOCOMPLETE
+$.getJSON("/server/lib_data.json", function(libs_list){
+
+  // alert(libs_list)
+
+
+  horsey(document.querySelector('#search-libs'), {
+
+    suggestions: function (value, done) {
+
+
+         done(libs_list.filter(function(item) {
+           item.value = item.repo;
+           return item.repo.search(new RegExp(value, "gi")) > -1;
+         }));
+
+
+     },
+     render: function (li, lib) {
+      // var image = '<img class="autofruit" src="example/fruits/' + suggestion.value + '.png" /> ';
+      li.innerHTML = lib.repo + " &#9733;" + lib.stargazers_count +""
+    }
+
+  });
+
+
 })

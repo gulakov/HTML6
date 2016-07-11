@@ -1,19 +1,42 @@
-
 header{
-		padding: 7px 135px;
+		padding: 7px 70px 0 140px;
 		margin: 5px 1%;
-	    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+	  box-shadow: 0 2px 5px 0 rgba(255,255,255,0.3);
+
+    background: #202020;
 }
 
+
+
+#search-libs{
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+		outline: 0;
+    border-radius: 4px;
+		height: 1.5em;
+    font-size: 1.5em;
+		line-height: 1.5em;
+		width: 300px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+		padding: 6px;
+		margin-bottom: 10px;
+		margin-left: 35%;
+}
 
 
 #logo{
 	position: absolute;
-	z-index: -1;
+	z-index: 0;
 	top: 15px;
 	left: 20px;
 }
 
+#github-ribbon{
+	opacity:.7; position: absolute; top: 0; left: 0; border: 0;
+
+	z-index: 1;
+}
 
 .em{
 	margin-bottom: -10px;
@@ -62,21 +85,4 @@ header{
 }
 .crimson{
 	color: crimson;
-}
-
-
-#search-libs{
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-		outline: 0;
-    border-radius: 4px;
-		height: 1.5em;
-    font-size: 1.5em;
-		line-height: 1.5em;
-		width: 300px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-		padding: 6px;
-		margin-bottom: 10px;
-		margin-left: 30%;
 }
