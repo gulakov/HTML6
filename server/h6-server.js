@@ -17,7 +17,7 @@ var app = function (req,res) {
 	res.writeHead(200);
 
 	 if ( path == "/" || !url.pathname)
-		return fs.createReadStream(__dirname + "/../html/index.html").pipe(res, {end: true});;
+		return fs.createReadStream(__dirname + "/../html/home.html").pipe(res, {end: true});;
 
 
 
