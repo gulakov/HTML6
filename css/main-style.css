@@ -3,6 +3,7 @@
 html{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 0.9em;
+	    height: 100%;
 }
 
 body{
@@ -15,9 +16,16 @@ body{
 
     color: ghostwhite;
     background: #202020;
-
 }
 
+::-webkit-scrollbar {
+  background: #202020;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #2f3129;
+   	border: 1px solid #268de4;
+}
 
 #particles {
   /*background: lightblue;*/
@@ -33,7 +41,7 @@ body{
 
 
 #translate{
-
+	height: 100%;
 	    /*z-index: -1;*/
 		margin: 0 7%;
      box-sizing: border-box;
@@ -51,7 +59,7 @@ body{
 #before,
 #after{
 
-		height: 350px;
+		height:100%;
 }
 
 #before:before{
@@ -64,19 +72,6 @@ body{
 	content: "HTML6.io";
 	font-weight: bold;
 	font-size: 1.2em;
-}
-
-#head{
-
-	/*line-height: em;*/
-	line-height: 200%;
-
-		/*background: ghostwhite	;*/
-		/*border: 1px solid gray;*/
-		border-radius: 10px;
-		padding-bottom: 2%;
-		font-size: 1.3em;
-
 }
 
 

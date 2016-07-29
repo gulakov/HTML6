@@ -48,10 +48,11 @@ var app = function (req,res) {
 
 		file_path = "./"+url.pathname.substr(1);
 
-		if (fs.existsSync(file_path))
+		if (fs.existsSync(file_path) )
 
-			fs.createReadStream(file_path).pipe(res, {end: true});;
-
+			fs.createReadStream(file_path).pipe(res, {end: true});
+		else
+			res.end();
 	}
 
 
@@ -67,6 +68,6 @@ http.createServer(app).listen(66, function(){
 
 //https
 require('https').createServer({
-    cert: fs.readFileSync('../letsencrypt/live/html6.io/fullchain.pem'),
-      key: fs.readFileSync('../letsencrypt/live/html6.io/privkey.pem')
+    cert: fs.readFileSync('/home/alex/ssl/html6/cert.pem'),
+      key: fs.readFileSync('/home/alex/ssl/html6/key.pem')
   },app).listen(660)

@@ -51,26 +51,13 @@ particleground(document.getElementById('particles'), {
 // AUTOCOMPLETE
 $.getJSON("/server/lib_data.json", function(libs_list){
 
-  // alert(libs_list)
+  libs_list = libs_list.map(function(lib){
+    return lib.repo + " ★" + lib.stargazers_count;
+  })
 
 
   horsey(document.querySelector('#search-libs'), {
-
-    suggestions: function (value, done) {
-
-
-         done(libs_list.filter(function(item) {
-           item.value = item.repo;
-           return item.repo.search(new RegExp(value, "gi")) > -1;
-         }));
-
-
-     },
-     render: function (li, lib) {
-      // var image = '<img class="autofruit" src="example/fruits/' + suggestion.value + '.png" /> ';
-      li.innerHTML = lib.repo + " &#9733;" + lib.stargazers_count +""
-    }
-
+   source: [{ list: libs_list }]
   });
 
 
